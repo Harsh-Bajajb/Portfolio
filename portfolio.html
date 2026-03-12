@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harsh.Bajaj - Backend Engineer</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="noise"></div>
+  <div class="circuit-overlay"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Harsh<span>.</span>Bajaj</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="status-badge">
+      <div class="status-dot"></div>
+      <span>Available for hire</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">
+        <span>⬡</span> Backend Engineer // Systems Architect
+      </div>
+      <h1 class="hero-name">
+        Harsh
+        <span class="line2">Bajaj</span>
+      </h1>
+      <p class="hero-role">Building the infrastructure the internet runs on</p>
+
+      <div class="terminal-box">
+        <div class="terminal-line"><span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ whoami</span></div>
+        <div class="terminal-line output">Backend engineer with 2+ years designing</div>
+        <div class="terminal-line output">distributed systems, APIs & data pipelines.</div>
+        <div class="terminal-line"><span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ cat
+            expertise.txt</span>
+        </div>
+        <div class="terminal-line output">Node.js · PostgreSQL · Redis · React.js</div>
+        <div class="terminal-line output">Express.js · RestAPI · GraphQL · GitHub · Python</div>
+        <div class="terminal-line"><span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ cat
+            expertise.txt</span>
+        </div>
+        <div class="terminal-line output">2+ years of proven expertise in API development, database management, and
+          full-stack development.</div>
+        <div class="terminal-line"><span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ <span
+              class="blink">█</span></span></div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">▶ View Projects</a>
+        <a href="#contact" class="btn-secondary">→ Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="pixel-grid" id="pixel-grid"></div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      Scroll to explore
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner" id="ticker-inner">
+      <span class="ticker-item">Node.js <span>◆</span></span>
+      <span class="ticker-item">TypeScript <span>◆</span></span>
+      <span class="ticker-item">Express.js <span>◆</span></span>
+      <span class="ticker-item">MongoDB <span>◆</span></span>
+      <span class="ticker-item">PostgreSQL <span>◆</span></span>
+      <span class="ticker-item">MySQL <span>◆</span></span>
+      <span class="ticker-item">Prisma <span>◆</span></span>
+      <span class="ticker-item">Python <span>◆</span></span>
+      <span class="ticker-item">FastAPI <span>◆</span></span>
+      <span class="ticker-item">React.js <span>◆</span></span>
+      <span class="ticker-item">JavaScript <span>◆</span></span>
+      <span class="ticker-item">Tailwind CSS <span>◆</span></span>
+      <span class="ticker-item">Git <span>◆</span></span>
+      <span class="ticker-item">GitHub <span>◆</span></span>
+      <span class="ticker-item">Postman <span>◆</span></span>
+      <span class="ticker-item">SQL <span>◆</span></span>
+      <span class="ticker-item">Linux <span>◆</span></span>
+      <!-- Duplicate for scroll -->
+      <span class="ticker-item">Node.js <span>◆</span></span>
+      <span class="ticker-item">TypeScript <span>◆</span></span>
+      <span class="ticker-item">Express.js <span>◆</span></span>
+      <span class="ticker-item">MongoDB <span>◆</span></span>
+      <span class="ticker-item">PostgreSQL <span>◆</span></span>
+      <span class="ticker-item">MySQL <span>◆</span></span>
+      <span class="ticker-item">Prisma <span>◆</span></span>
+      <span class="ticker-item">Python <span>◆</span></span>
+      <span class="ticker-item">FastAPI <span>◆</span></span>
+      <span class="ticker-item">React.js <span>◆</span></span>
+      <span class="ticker-item">JavaScript <span>◆</span></span>
+      <span class="ticker-item">Tailwind CSS <span>◆</span></span>
+      <span class="ticker-item">Git <span>◆</span></span>
+      <span class="ticker-item">GitHub <span>◆</span></span>
+      <span class="ticker-item">Postman <span>◆</span></span>
+      <span class="ticker-item">SQL <span>◆</span></span>
+      <span class="ticker-item">Linux <span>◆</span></span>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-header reveal">
+      <span class="section-num">01 //</span>
+      <h2 class="section-title">Experience</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="timeline">
+      <div class="exp-item reveal">
+        <div class="exp-date">
+          <span class="exp-date-range">Apr 2025 — Present</span>
+          <span class="exp-duration">Present</span>
+        </div>
+        <div class="exp-content">
+          <div class="exp-company">Cynox Security LLP</div>
+          <div class="exp-role">Web Developer — Full Stack & Systems</div>
+          <div class="exp-desc">
+            Streamlined task tracking across teams by developing an internal Task Management System,
+            supporting 200+ concurrent API requests through asynchronous job processing.
+            Implemented secure RBAC, audit logging, and approval workflows.
+            Rebuilt the company website to improve usability and client engagement.
+          </div>
+          <div class="exp-tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Prisma</span>
+            <span class="tag">RBAC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-date">
+          <span class="exp-date-range">Nov 2023 — Sep 2024</span>
+          <span class="exp-duration">11 mo</span>
+        </div>
+        <div class="exp-content">
+          <div class="exp-company">North Delhi Public School</div>
+          <div class="exp-role">Software Engineer — Data & Web</div>
+          <div class="exp-desc">
+            Managed institutional datasets using Excel for cleaning and structuring student records.
+            Supported website development using WordPress and PHP for enquiry and data collection workflows.
+            Utilized SQL for web and data workflow optimizations.
+          </div>
+          <div class="exp-tags">
+            <span class="tag">WordPress</span>
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Excel</span>
+            <span class="tag">HTML/CSS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <div class="skills-banner reveal">
+    <div class="skills-title">// Technical Proficiency</div>
+    <div class="skills-list">
+      <div class="skill-row">
+        <div class="skill-info"><span class="skill-name">Node.js / TypeScript</span><span class="skill-pct">94%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-fill" style="width:94%"></div>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-info"><span class="skill-name">Database & Data Modeling</span><span
+            class="skill-pct">91%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-fill" style="width:91%"></div>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-info"><span class="skill-name">Python / FastAPI</span><span class="skill-pct">89%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-fill" style="width:89%"></div>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-info"><span class="skill-name">Security & Auth (JWT / RBAC)</span><span
+            class="skill-pct">92%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-fill" style="width:92%"></div>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-info"><span class="skill-name">DevOps & Linux Tools</span><span class="skill-pct">85%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-fill" style="width:85%"></div>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-info"><span class="skill-name">Frontend (React / Tailwind)</span><span
+            class="skill-pct">82%</span></div>
+        <div class="skill-track">
+          <div class="skill-fill" style="width:82%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <span class="section-num">02 //</span>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="projects-grid">
+      <div class="proj-card large reveal">
+        <svg class="proj-lines" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M120 0 L80 0 L80 40 L40 40 L40 80 L0 80" stroke="rgba(0,212,255,0.3)" stroke-width="1" />
+          <path d="M120 40 L100 40 L100 80 L60 80 L60 120" stroke="rgba(0,212,255,0.15)" stroke-width="1" />
+          <circle cx="80" cy="40" r="3" fill="rgba(0,212,255,0.5)" />
+          <circle cx="40" cy="80" r="3" fill="rgba(0,212,255,0.3)" />
+          <circle cx="100" cy="80" r="3" fill="rgba(0,212,255,0.2)" />
+        </svg>
+        <div class="proj-num">// 001</div>
+        <div class="proj-name">Task Management System</div>
+        <div class="proj-desc">A backend-centric platform built with Node.js and Express.js, featuring distributed
+          background
+          job processing using BullMQ and Redis for high-concurrency task handling. Implements JWT-based RBAC
+          authentication
+          and scalable MySQL/Prisma data modeling.</div>
+        <div class="proj-stack">
+          <span class="stack-badge">Node.js</span>
+          <span class="stack-badge">Express.js</span>
+          <span class="stack-badge">Prisma</span>
+          <span class="stack-badge">BullMQ</span>
+          <span class="stack-badge">Redis</span>
+        </div>
+        <div class="proj-metrics">
+          <div class="metric"><span class="metric-val">200+</span><span class="metric-label">API req/sec</span></div>
+          <div class="metric"><span class="metric-val">50+</span><span class="metric-label">active users</span></div>
+        </div>
+        <span class="proj-arrow">↗</span>
+      </div>
+
+      <div class="proj-card medium proj-hot reveal">
+        <svg class="proj-lines" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 40 L40 40 L40 0" stroke="rgba(255,107,53,0.3)" stroke-width="1" />
+          <path d="M0 80 L60 80 L60 60 L120 60" stroke="rgba(255,107,53,0.15)" stroke-width="1" />
+          <circle cx="40" cy="40" r="3" fill="rgba(255,107,53,0.5)" />
+        </svg>
+        <div class="proj-num">// 002</div>
+        <div class="proj-name">Invoice Generator Pro</div>
+        <div class="proj-desc">A high-fidelity React application with live preview, logo support, and automatic GST/VAT
+          calculations. Built for professional speed with one-click PDF export and pixel-perfect HSL design.</div>
+        <div class="proj-stack">
+          <span class="stack-badge">React</span>
+          <span class="stack-badge">Chakra UI</span>
+          <span class="stack-badge">Tailwind</span>
+          <span class="stack-badge">jsPDF</span>
+        </div>
+        <div class="proj-metrics">
+          <div class="metric"><span class="metric-val">Live</span><span class="metric-label">Preview</span></div>
+          <div class="metric"><span class="metric-val">PDF</span><span class="metric-label">Export</span></div>
+        </div>
+        <span class="proj-arrow">↗</span>
+      </div>
+
+      <div class="proj-card wide proj-accent reveal">
+        <svg class="proj-lines" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 40 L40 40 L40 0" stroke="rgba(0,255,157,0.3)" stroke-width="1" />
+          <path d="M0 80 L60 80 L60 60 L120 60" stroke="rgba(0,255,157,0.15)" stroke-width="1" />
+          <circle cx="40" cy="40" r="3" fill="rgba(0,255,157,0.5)" />
+          <circle cx="60" cy="80" r="3" fill="rgba(0,255,157,0.3)" />
+        </svg>
+        <div class="proj-num">// 003</div>
+        <div class="proj-name">Advanced Resume ATS & Intelligence</div>
+        <div class="proj-desc">AI-powered resume engine that improved matchmaking scores from 40% to 70% using
+          TF-IDF semantic analysis. Load-tested with k6 to achieve 600+ requests/sec with p95 latency
+          under 300ms for high-volume recruitment pipelines.</div>
+        <div class="proj-stack">
+          <span class="stack-badge">Python</span>
+          <span class="stack-badge">FastAPI</span>
+          <span class="stack-badge">TF-IDF</span>
+          <span class="stack-badge">k6</span>
+          <span class="stack-badge">PostgreSQL</span>
+        </div>
+        <div class="proj-metrics">
+          <div class="metric"><span class="metric-val">600+</span><span class="metric-label">req/sec</span></div>
+          <div class="metric"><span class="metric-val">90%</span><span class="metric-label">match accuracy</span></div>
+        </div>
+        <span class="proj-arrow">↗</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-left reveal">
+      <div class="big-text">
+        Let's build<br>
+        something <em>reliable.</em>
+      </div>
+      <p class="contact-desc">
+        Whether you need a scalable backend, a secure API, or high-concurrency systems. I'm ready to collaborate.
+        Available for full-time and project-based opportunities.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:harshbajaj544@gmail.com" class="contact-link">
+          <span class="contact-link-icon">✉</span>
+          <span class="contact-link-label">harshbajaj544@gmail.com</span>
+          <span class="contact-link-arr">→</span>
+        </a>
+        <a href="https://github.com/dexten32" class="contact-link">
+          <span class="contact-link-icon">⌥</span>
+          <span class="contact-link-label">github.com/dexten32</span>
+          <span class="contact-link-arr">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/harsh-bajajb/" class="contact-link">
+          <span class="contact-link-icon">⚡</span>
+          <span class="contact-link-label">linkedin.com/in/harsh-bajajb</span>
+          <span class="contact-link-arr">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-right reveal">
+      <div class="form-title">// Initialize Connection</div>
+      <div class="form-group">
+        <label class="form-label">Identifier</label>
+        <input type="text" class="form-input" placeholder="your_name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Return Address</label>
+        <input type="email" class="form-input" placeholder="you@company.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Subject</label>
+        <input type="text" class="form-input" placeholder="What are we building?">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Payload</label>
+        <textarea class="form-input" placeholder="Describe the problem or project..."></textarea>
+      </div>
+      <button class="form-submit">→ Transmit Message</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-copy">© 2026 Harsh Bajaj — <span>All systems operational</span></div>
+    <div class="footer-built">Built with ♥ and JetBrains Mono</div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
