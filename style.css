@@ -1285,6 +1285,10 @@ footer {
     font-size: 15vw;
   }
 
+  .terminal-box {
+    text-align: start;
+  }
+
   .status-badge {
     padding: 6px 8px;
   }
@@ -1342,7 +1346,10 @@ footer {
   }
 
   .terminal-box {
-    text-align: left;
+    text-align: start;
+    padding: 16px;
+    margin-bottom: 32px;
+    width: 100%;
   }
 
   #experience,
