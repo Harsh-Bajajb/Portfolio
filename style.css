@@ -27,7 +27,9 @@
   * {
     cursor: auto !important;
   }
-  .cursor, .cursor-ring {
+
+  .cursor,
+  .cursor-ring {
     display: none !important;
   }
 }
@@ -201,14 +203,15 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 0 0 60px;
+  justify-content: space-between;
+  padding: 0 60px;
   position: relative;
   overflow: hidden;
 }
 
 .hero-left {
   flex: 1;
-  max-width: 700px;
+  max-width: 900px;
 }
 
 .hero-tag {
@@ -367,7 +370,6 @@ section {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-left: 60px;
 }
 
 .pixel-grid {
@@ -856,9 +858,10 @@ section {
 #contact {
   padding: 120px 60px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 200px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .contact-left .big-text {
@@ -880,7 +883,7 @@ section {
   font-size: 0.78rem;
   line-height: 1.9;
   color: var(--muted);
-  max-width: 380px;
+  max-width: 500px;
   margin-bottom: 48px;
 }
 
@@ -1119,31 +1122,43 @@ footer {
 }
 
 @media (min-width: 1401px) {
-  #hero, #experience, #projects, #contact {
-    max-width: 1400px;
+
+  #experience,
+  #projects,
+  #contact {
+    max-width: 2000px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  #hero {
+    max-width: none;
+    padding-right: 0;
   }
 }
 
 @media (max-width: 1200px) {
-  #experience, #projects, #contact {
+
+  #experience,
+  #projects,
+  #contact {
     padding: 100px 40px;
   }
-  
+
   .hero-right {
-    padding-left: 20px;
+    padding-left: 120px;
   }
 }
 
 @media (max-width: 1100px) {
+
   .proj-card.large,
   .proj-card.medium,
   .proj-card.wide,
   .proj-card.small {
     grid-column: span 6;
   }
-  
+
   /* Make the 3rd project take full width if needed for balance */
   .projects-grid .proj-card:nth-child(3) {
     grid-column: span 12;
@@ -1152,10 +1167,10 @@ footer {
 
 @media (max-width: 1024px) {
   .pixel-grid {
-    width: 400px;
-    height: 400px;
+    width: 550px;
+    height: 550px;
   }
-  
+
   .hero-name {
     font-size: 4rem;
   }
@@ -1163,12 +1178,12 @@ footer {
   .timeline::before {
     left: 140px;
   }
-  
+
   .exp-item {
     grid-template-columns: 140px 1fr;
     gap: 40px;
   }
-  
+
   .exp-item::after {
     left: 136px;
   }
@@ -1303,15 +1318,85 @@ footer {
   }
 
   .skills-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .skills-banner {
+    padding: 60px 20px;
   }
 
   .contact-right {
-    padding: 32px 20px;
+    padding: 32px 16px;
   }
 
   .contact-link {
     padding: 12px 16px;
     gap: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  #hero {
+    padding: 80px 16px 40px;
+    text-align: center;
+  }
+
+  .terminal-box {
+    text-align: left;
+  }
+
+  #experience,
+  #projects,
+  #contact,
+  .skills-banner {
+    padding: 60px 16px;
+  }
+
+  .hero-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-name {
+    font-size: 18vw;
+  }
+
+  .terminal-box {
+    padding: 16px;
+    margin-bottom: 32px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .contact-right {
+    padding: 24px 10px;
+  }
+
+  .exp-content {
+    padding: 16px 12px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .big-text {
+    font-size: 1.8rem;
+  }
+
+  .contact-desc {
+    max-width: 100%;
+    font-size: 0.75rem;
+  }
+
+  .contact-link {
+    padding: 10px 12px;
+    gap: 8px;
   }
 }
