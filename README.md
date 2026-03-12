@@ -1,6 +1,6 @@
 # Digital Monolith - Developer Portfolio
 
-A high-fidelity, systems-centric developer portfolio designed with a "Digital Monolith" aesthetic. This project showcases the expertise of Harsh Bajaj, focusing on backend engineering, distributed systems, and performance-optimized web architectures.
+A high-fidelity, systems-centric developer portfolio designed with a "Digital Monolith" aesthetic. This project showcases the expertise of Me (Harsh Bajaj), focusing on backend engineering, distributed systems, and performance-optimized web architectures.
 
 ## ✨ Tech Stack & Tools
 
