@@ -1,5 +1,5 @@
 :root {
-  --bg: #070b0f;
+  --bg: rgb(7, 11, 15);
   --bg2: #0b1117;
   --surface: #0f1822;
   --border: #1a2a3a;
@@ -9,10 +9,10 @@
   --accent4: #6e00ff;
   --accent5: #ff6f00;
   --accent6: #00ff6f;
-  --text: #c8d8e8;
-  --muted: #4a6070;
-  --glow: 0 0 20px rgba(0, 212, 255, 0.3);
-  --glow2: 0 0 20px rgba(0, 255, 157, 0.3);
+  --text: #e9edf1;
+  --muted: #8499a8;
+  --glow: 0 0 20px rgba(0, 213, 255, 0.514);
+  --glow2: 0 0 20px rgba(0, 255, 157, 0.486);
   user-select: none;
 }
 
@@ -364,6 +364,27 @@ section {
   color: var(--accent);
 }
 
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 212, 255, 0.05);
+}
+
 /* Server rack right side */
 .hero-right {
   flex: 1;
@@ -386,7 +407,7 @@ section {
 .pixel {
   position: relative;
   overflow: hidden;
-  background: rgba(0, 212, 255, 0.04);
+  background: rgb(7, 11, 15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 4s ease;
 }
@@ -639,6 +660,13 @@ section {
   overflow: hidden;
   cursor: none;
   transition: all 0.4s;
+}
+
+.proj-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
 }
 
 .proj-card:hover {
