@@ -22,12 +22,12 @@ document.querySelectorAll('a, button, .proj-card, .exp-content').forEach(el => {
   el.addEventListener('mouseenter', () => {
     cursor.style.transform = 'scale(2)';
     ring.style.transform = 'scale(1.5)';
-    ring.style.borderColor = 'rgba(0,255,157,0.6)';
+    ring.style.borderColor = 'rgba(255,209,102,0.6)';
   });
   el.addEventListener('mouseleave', () => {
     cursor.style.transform = 'scale(1)';
     ring.style.transform = 'scale(1)';
-    ring.style.borderColor = 'rgba(0,212,255,0.5)';
+    ring.style.borderColor = 'rgba(255,159,28,0.5)';
   });
 });
 
@@ -54,7 +54,7 @@ class DataStream {
     this.length = 40 + Math.random() * 80;
     this.opacity = 0.1 + Math.random() * 0.3;
     this.width = Math.random() < 0.5 ? 1 : 0.5;
-    this.color = Math.random() < 0.7 ? '#00d4ff' : '#00ff9d';
+    this.color = Math.random() < 0.7 ? '#ffd166' : '#ff9f1c';
     // Packets along stream
     this.packets = Array.from({ length: Math.floor(2 + Math.random() * 4) }, () => Math.random());
   }
@@ -103,7 +103,7 @@ class HDataStream {
   draw() {
     const grad = ctx.createLinearGradient(this.x - this.length, this.y, this.x, this.y);
     grad.addColorStop(0, 'transparent');
-    grad.addColorStop(1, `rgba(0,212,255,${this.opacity})`);
+    grad.addColorStop(1, `rgba(255,159,28,${this.opacity})`);
     ctx.strokeStyle = grad;
     ctx.lineWidth = 0.5;
     ctx.beginPath();
@@ -207,4 +207,245 @@ if (pixelGrid) {
 
   // Trigger one at a time (Interval > Animation Duration)
   setInterval(() => triggerIndividualSweep(), 2500);
+}
+
+// ===== INTERACTIVE TERMINAL ENGINE =====
+const terminalBox = document.getElementById('terminal-box');
+const hiddenInput = document.getElementById('terminal-hidden-input');
+const terminalHistory = document.getElementById('terminal-history');
+const activeInputText = document.querySelector('.active-line .input-text');
+
+if (terminalBox && hiddenInput && terminalHistory && activeInputText) {
+  // Command History tracking
+  const cmdHistory = [];
+  let historyIndex = -1;
+
+  // Let users focus the hidden input by clicking anywhere in the terminal box
+  terminalBox.addEventListener('click', () => {
+    hiddenInput.focus();
+  });
+
+  // Listen for text input to update the visual active line
+  hiddenInput.addEventListener('input', () => {
+    activeInputText.textContent = hiddenInput.value;
+    terminalBox.scrollTop = terminalBox.scrollHeight;
+  });
+
+  // Handle keys (Enter for execution, Up/Down for history)
+  hiddenInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const command = hiddenInput.value.trim();
+      executeCommand(command);
+      hiddenInput.value = '';
+      activeInputText.textContent = '';
+      historyIndex = -1;
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (cmdHistory.length > 0) {
+        if (historyIndex === -1) {
+          historyIndex = cmdHistory.length - 1;
+        } else if (historyIndex > 0) {
+          historyIndex--;
+        }
+        hiddenInput.value = cmdHistory[historyIndex];
+        activeInputText.textContent = hiddenInput.value;
+      }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (cmdHistory.length > 0 && historyIndex !== -1) {
+        if (historyIndex < cmdHistory.length - 1) {
+          historyIndex++;
+          hiddenInput.value = cmdHistory[historyIndex];
+        } else {
+          historyIndex = -1;
+          hiddenInput.value = '';
+        }
+        activeInputText.textContent = hiddenInput.value;
+      }
+    }
+  });
+
+  function executeCommand(cmdStr) {
+    // 1. Add command to history array
+    if (cmdStr) {
+      cmdHistory.push(cmdStr);
+      // Cap history at 50 entries
+      if (cmdHistory.length > 50) cmdHistory.shift();
+    }
+
+    // 2. Append original prompt line to terminal history (static version)
+    const promptLine = document.createElement('div');
+    promptLine.className = 'terminal-line';
+    promptLine.innerHTML = `<span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ ${escapeHTML(cmdStr)}</span>`;
+    terminalHistory.appendChild(promptLine);
+
+    // 3. Process output
+    const cleanCmd = cmdStr.toLowerCase().trim();
+    let outputLines = [];
+
+    if (cleanCmd === '') {
+      // Empty enter, do nothing
+    } else if (cleanCmd === 'help') {
+      outputLines = [
+        'Available commands:',
+        '  about / whoami  - Learn more about Harsh Bajaj',
+        '  skills          - Print core technical proficiencies',
+        '  projects        - List systems, web & desktop projects',
+        '  education       - View academic credentials',
+        '  contact         - Output active communication channels',
+        '  resume          - Download Harsh_Bajaj_Resume.pdf',
+        '  clear           - Flush terminal output buffer'
+      ];
+    } else if (cleanCmd === 'about' || cleanCmd === 'whoami') {
+      outputLines = [
+        'Harsh Bajaj — Backend Engineer // Systems Engineer',
+        'Experienced (~2 years) in architecting high-throughput REST APIs,',
+        'distributed task processing (Redis/BullMQ), secure RBAC workflows,',
+        'and AI-powered semantic matching (ONNX Runtime, NLP pipelines).',
+        'Currently pursuing a Master of Computer Applications (MCA) at IGNOU.'
+      ];
+    } else if (cleanCmd === 'skills') {
+      outputLines = [
+        'Core Technical Capabilities:',
+        '  [Backend & Systems]   Node.js · TypeScript · Express.js · FastAPI · REST APIs',
+        '  [Databases & Cache]   PostgreSQL · MongoDB · MySQL · Redis · Prisma ORM',
+        '  [AI & NLP Engine]     Semantic Search · Cosine Similarity · ONNX Runtime',
+        '  [Infrastructure]      Docker · Linux · PM2 · Load Testing (k6) · Nginx',
+        '  [Security & Devops]   Secure Backend Architectures · JWT · RBAC · Winston Logging'
+      ];
+    } else if (cleanCmd === 'projects') {
+      outputLines = [
+        'Technical Showcase:',
+        '  001: Advanced Resume ATS & Intelligence [Desktop Application - GitHub]',
+        '       - AI-powered matching, all-MiniLM-L6-v2 embeddings, keyword stuffing penalties.',
+        '  002: Invoice Generator Pro [Desktop Application - Electron/React]',
+        '       - High-fidelity invoice design, real-time PDF generation, localized file exports.',
+        '  003: Task Management System [Web Application - Vercel]',
+        '       - Redis & BullMQ queuing, Express backend, JWT RBAC, Prisma, MySQL.'
+      ];
+    } else if (cleanCmd === 'education') {
+      outputLines = [
+        'Education Credentials:',
+        '  - Master of Computer Applications (MCA) | IGNOU (2025 - 2027) - In Progress',
+        '  - BSc Computer Science | Deshbandhu College, Delhi University (2021 - 2025) - Completed'
+      ];
+    } else if (cleanCmd === 'contact') {
+      outputLines = [
+        'Initialize Connection Channels:',
+        '  - Email:    harshbajaj544@gmail.com',
+        '  - GitHub:   github.com/dexten32',
+        '  - LinkedIn: linkedin.com/in/harsh-bajajb'
+      ];
+    } else if (cleanCmd === 'resume') {
+      outputLines = ['Locating artifact... Triggering download for Harsh_Bajaj_Resume.pdf...'];
+      // Virtual anchor to download resume
+      const downloadLink = document.createElement('a');
+      downloadLink.href = 'Harsh_Bajaj_Resume.pdf';
+      downloadLink.download = 'Harsh_Bajaj_Resume.pdf';
+      downloadLink.style.display = 'none';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    } else if (cleanCmd === 'clear') {
+      terminalHistory.innerHTML = '';
+    } else {
+      outputLines = [
+        `sh: command not found: ${escapeHTML(cmdStr)}`,
+        'Type "help" to see all valid systems commands.'
+      ];
+    }
+
+    // 4. Print output lines
+    outputLines.forEach(lineText => {
+      const outLine = document.createElement('div');
+      outLine.className = 'terminal-line output';
+      outLine.textContent = lineText;
+      terminalHistory.appendChild(outLine);
+    });
+
+    // 5. Scroll terminal box to the bottom
+    terminalBox.scrollTop = terminalBox.scrollHeight;
+  }
+
+  // Pre-load prompt focus
+  terminalBox.scrollTop = terminalBox.scrollHeight;
+
+  function escapeHTML(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+}
+
+// ===== CONTACT FORM TRANSMISSION ENGINE =====
+const contactForm = document.getElementById('contact-form');
+const formStatusBox = document.getElementById('form-status-box');
+const formSubmitBtn = document.getElementById('form-submit-btn');
+
+if (contactForm && formStatusBox && formSubmitBtn) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Check honeypot spam filter
+    const botcheck = contactForm.querySelector('input[name="botcheck"]');
+    if (botcheck && botcheck.checked) {
+      console.warn("Spam detection triggered.");
+      return;
+    }
+
+    // Set initial loading state
+    formStatusBox.style.display = 'block';
+    formStatusBox.className = 'form-status-box transmitting';
+    formStatusBox.innerHTML = `
+      [INITIALIZING TRANSMISSION...]<br>
+      [CONNECTING TO SECURE RELAY...]<br>
+      [TRANSMITTING PAYLOAD...]
+    `;
+    
+    // Disable submit button during transmission
+    formSubmitBtn.disabled = true;
+    formSubmitBtn.textContent = 'Transmitting...';
+
+    // Prepare FormData
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (response.status === 200 && result.success) {
+        // Success
+        formStatusBox.className = 'form-status-box success';
+        formStatusBox.innerHTML = `
+          [CONNECTION STABILIZED]<br>
+          [PAYLOAD RECEIVED SUCCESSFULLY]<br>
+          [MESSAGE TRANSMITTED SECURELY TO ENGINE CORE]
+        `;
+        // Clear form values
+        contactForm.reset();
+      } else {
+        // Error response
+        throw new Error(result.message || 'Transmission hand-shake failed.');
+      }
+    } catch (error) {
+      console.error(error);
+      formStatusBox.className = 'form-status-box error';
+      formStatusBox.innerHTML = `
+        [ERROR: TRANSMISSION FAULT DETECTED]<br>
+        [HANDSHAKE FAILED: ${error.message}]<br>
+        [PLEASE RETRY LATER OR DIRECT EMAIL]
+      `;
+    } finally {
+      // Re-enable submit button
+      formSubmitBtn.disabled = false;
+      formSubmitBtn.textContent = '→ Transmit Message';
+    }
+  });
 }

@@ -27,6 +27,7 @@
       <li><a href="#hero">Home</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="status-badge">
@@ -47,28 +48,25 @@
       </h1>
       <p class="hero-role">Building the infrastructure the internet runs on</p>
 
-      <div class="terminal-box">
-        <div class="terminal-line"><span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ whoami</span></div>
-        <div class="terminal-line output">Backend engineer with ~2 years designing</div>
-        <div class="terminal-line output">distributed systems, APIs & data pipelines.</div>
-        <div class="terminal-line"><span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ cat
-            expertise.txt</span>
+      <div class="terminal-box" id="terminal-box">
+        <input type="text" id="terminal-hidden-input" aria-label="Terminal Input" autocomplete="off" spellcheck="false">
+        <div id="terminal-history">
+          <div class="terminal-line"><span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ whoami</span></div>
+          <div class="terminal-line output">Backend engineer with ~2 years experience designing distributed systems, APIs & data pipelines.</div>
+          <div class="terminal-line"><span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ cat expertise.txt</span></div>
+          <div class="terminal-line output">Node.js · PostgreSQL · Redis · React.js · Express.js · REST APIs · GraphQL · Python · FastAPI</div>
+          <div class="terminal-line"><span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ cat contact.txt</span></div>
+          <div class="terminal-line output">harshbajaj544@gmail.com · github.com/dexten32 · linkedin.com/in/harsh-bajajb</div>
         </div>
-        <div class="terminal-line output">Node.js · PostgreSQL · Redis · React.js</div>
-        <div class="terminal-line output">Express.js · RestAPI · GraphQL · GitHub · Python</div>
-        <div class="terminal-line"><span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ cat
-            expertise.txt</span>
+        <div class="terminal-line active-line">
+          <span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ <span class="input-text"></span><span class="blink">█</span></span>
         </div>
-        <div class="terminal-line output">~2 years of proven expertise in API development, database management, and
-          full-stack development.</div>
-        <div class="terminal-line"><span class="prompt">~/harsh-bajaj</span> <span class="cmd">$ <span
-              class="blink">█</span></span></div>
       </div>
 
       <div class="hero-cta">
         <a href="#projects" class="btn-primary">▶ View Projects</a>
         <a href="#contact" class="btn-secondary">→ Get in Touch</a>
-        <a href="assets/Harsh_Bajaj_Resume.pdf" class="btn-outline" download>
+        <a href="Harsh_Bajaj_Resume.pdf" class="btn-outline" download>
           <span class="btn-icon">↓</span> Resume.pdf
         </a>
       </div>
@@ -136,17 +134,14 @@
     <div class="timeline">
       <div class="exp-item reveal">
         <div class="exp-date">
-          <span class="exp-date-range">Apr 2025 — Present</span>
-          <span class="exp-duration">Present</span>
+          <span class="exp-date-range">Apr 2025 — Apr 2026</span>
+          <span class="exp-duration">1 yr</span>
         </div>
         <div class="exp-content">
           <div class="exp-company">Cynox Security LLP</div>
           <div class="exp-role">Web Developer — Full Stack & Systems</div>
           <div class="exp-desc">
-            Streamlined task tracking across teams by developing an internal Task Management System,
-            supporting 200+ concurrent API requests through asynchronous job processing.
-            Implemented secure RBAC, audit logging, and approval workflows.
-            Rebuilt the company website to improve usability and client engagement.
+            Architected and delivered a production-grade Task Management System by converting loosely defined stakeholder requirements into scalable backend services and APIs. Improved system throughput by ~2x through load testing, optimized database pooling, and asynchronous processing using Redis and BullMQ. Diagnosed malicious resource consumption to stabilize VPS infrastructure and redesigned PDF report generation workflows, reducing size by ~10x.
           </div>
           <div class="exp-tags">
             <span class="tag">Node.js</span>
@@ -154,6 +149,8 @@
             <span class="tag">Express.js</span>
             <span class="tag">MongoDB</span>
             <span class="tag">Prisma</span>
+            <span class="tag">Redis</span>
+            <span class="tag">BullMQ</span>
             <span class="tag">RBAC</span>
           </div>
         </div>
@@ -168,9 +165,7 @@
           <div class="exp-company">North Delhi Public School</div>
           <div class="exp-role">Software Engineer — Data & Web</div>
           <div class="exp-desc">
-            Managed institutional datasets using Excel for cleaning and structuring student records.
-            Supported website development using WordPress and PHP for enquiry and data collection workflows.
-            Utilized SQL for web and data workflow optimizations.
+            Processed and structured institutional datasets using advanced Excel workflows to support student records management, administrative reporting, and data-driven insights. Developed and optimized PHP and WordPress workflows for inquiry collection, admissions management, and database synchronization.
           </div>
           <div class="exp-tags">
             <span class="tag">WordPress</span>
@@ -194,42 +189,48 @@
           <span class="skill-tag">Node.js</span>
           <span class="skill-tag">TypeScript</span>
           <span class="skill-tag">Express.js</span>
+          <span class="skill-tag">Python</span>
           <span class="skill-tag">FastAPI</span>
-          <span class="skill-tag">REST API</span>
-          <span class="skill-tag">Auth (JWT/RBAC)</span>
-          <span class="skill-tag">Middleware Architecture</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3 class="category-name">Databases & Modeling</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">Redis</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Redis & BullMQ</span>
+          <span class="skill-tag">PostgreSQL & MongoDB</span>
           <span class="skill-tag">Prisma ORM</span>
-          <span class="skill-tag">Query Optimization</span>
         </div>
       </div>
       <div class="skill-category">
-        <h3 class="category-name">Security & Engineering</h3>
+        <h3 class="category-name">AI & NLP Engineering</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Secure Backend</span>
-          <span class="skill-tag">Logging (Winston)</span>
-          <span class="skill-tag">Error Handling</span>
-          <span class="skill-tag">Input Validation</span>
-          <span class="skill-tag">System Design</span>
+          <span class="skill-tag">Semantic Search</span>
+          <span class="skill-tag">Vector Embeddings</span>
+          <span class="skill-tag">ONNX Runtime</span>
+          <span class="skill-tag">TF-IDF Fallbacks</span>
+          <span class="skill-tag">Cosine Similarity</span>
+          <span class="skill-tag">Domain Weighting</span>
+          <span class="skill-tag">NLP Pipelines</span>
         </div>
       </div>
       <div class="skill-category">
-        <h3 class="category-name">Interfacing & Tools</h3>
+        <h3 class="category-name">Infrastructure & Scale</h3>
         <div class="skill-tags">
-          <span class="skill-tag">React.js</span>
-          <span class="skill-tag">Tailwind</span>
-          <span class="skill-tag">Git/GitHub</span>
-          <span class="skill-tag">Postman</span>
-          <span class="skill-tag">Linux Basics</span>
           <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Linux / Bash</span>
+          <span class="skill-tag">Nginx Reverse Proxy</span>
+          <span class="skill-tag">PM2 Process Manager</span>
+          <span class="skill-tag">Load Testing (k6)</span>
+          <span class="skill-tag">Asynchronous Processing</span>
+          <span class="skill-tag">VPS Stabilization</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3 class="category-name">Security & Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">JWT Auth</span>
+          <span class="skill-tag">Secure RBAC</span>
+          <span class="skill-tag">Rate Limiting</span>
+          <span class="skill-tag">Winston Logging</span>
+          <span class="skill-tag">Git / GitHub</span>
+          <span class="skill-tag">Postman API Testing</span>
+          <span class="skill-tag">Puppeteer Scraping</span>
         </div>
       </div>
     </div>
@@ -244,28 +245,77 @@
     </div>
 
     <div class="projects-grid">
-      <div class="proj-card large reveal">
+      <div class="proj-card large proj-accent reveal">
+        <a href="https://github.com/dexten32/ATS" target="_blank">
+          <svg class="proj-lines" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 40 L40 40 L40 0" stroke="var(--accent2)" opacity="0.3" stroke-width="1" />
+            <path d="M0 80 L60 80 L60 60 L120 60" stroke="var(--accent2)" opacity="0.15" stroke-width="1" />
+            <circle cx="40" cy="40" r="3" fill="var(--accent2)" opacity="0.5" />
+            <circle cx="60" cy="80" r="3" fill="var(--accent2)" opacity="0.3" />
+          </svg>
+          <div class="proj-num">// 001 · Desktop Application</div>
+          <div class="proj-name">Advanced Resume ATS & Intelligence</div>
+          <div class="proj-desc">AI-powered resume evaluation desktop and backend engine utilizing ONNX Runtime text embeddings (all-MiniLM-L6-v2) and inflation-resistant scoring weights (domain weighting & penalty engines to combat keyword stuffing). Load-tested with k6 to achieve sub-300ms p95 latency.</div>
+          <div class="proj-stack">
+            <span class="stack-badge">Python</span>
+            <span class="stack-badge">FastAPI</span>
+            <span class="stack-badge">ONNX NLP</span>
+            <span class="stack-badge">k6</span>
+            <span class="stack-badge">PostgreSQL</span>
+            <span class="stack-badge">PyQt / CustomTkinter</span>
+          </div>
+          <div class="proj-metrics">
+            <div class="metric"><span class="metric-val">600+</span><span class="metric-label">req/sec</span></div>
+            <div class="metric"><span class="metric-val">90%</span><span class="metric-label">match accuracy</span></div>
+          </div>
+          <span class="proj-arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="proj-card medium proj-hot reveal">
+        <a href="https://github.com/dexten32/invoice_generator" target="_blank">
+          <svg class="proj-lines" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 40 L40 40 L40 0" stroke="var(--accent3)" opacity="0.3" stroke-width="1" />
+            <path d="M0 80 L60 80 L60 60 L120 60" stroke="var(--accent3)" opacity="0.15" stroke-width="1" />
+            <circle cx="40" cy="40" r="3" fill="var(--accent3)" opacity="0.5" />
+          </svg>
+          <div class="proj-num">// 002 · Desktop Application</div>
+          <div class="proj-name">Invoice Generator Pro</div>
+          <div class="proj-desc">A high-fidelity desktop and web application with live real-time PDF previewing, multi-currency support, custom logo uploading, and automated tax calculations. Features pixel-perfect brutalist aesthetics with optimized one-click local file exports.</div>
+          <div class="proj-stack">
+            <span class="stack-badge">React</span>
+            <span class="stack-badge">Chakra UI</span>
+            <span class="stack-badge">Tailwind</span>
+            <span class="stack-badge">jsPDF</span>
+            <span class="stack-badge">Electron</span>
+          </div>
+          <div class="proj-metrics">
+            <div class="metric"><span class="metric-val">Local</span><span class="metric-label">Save & Print</span></div>
+            <div class="metric"><span class="metric-val">PDF</span><span class="metric-label">Export</span></div>
+          </div>
+          <span class="proj-arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="proj-card wide reveal">
         <a href="https://task-management-system-cyan-five.vercel.app/" target="_blank">
           <svg class="proj-lines" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M120 0 L80 0 L80 40 L40 40 L40 80 L0 80" stroke="rgba(0,212,255,0.3)" stroke-width="1" />
-            <path d="M120 40 L100 40 L100 80 L60 80 L60 120" stroke="rgba(0,212,255,0.15)" stroke-width="1" />
-            <circle cx="80" cy="40" r="3" fill="rgba(0,212,255,0.5)" />
-            <circle cx="40" cy="80" r="3" fill="rgba(0,212,255,0.3)" />
-            <circle cx="100" cy="80" r="3" fill="rgba(0,212,255,0.2)" />
+            <path d="M120 0 L80 0 L80 40 L40 40 L40 80 L0 80" stroke="var(--accent)" opacity="0.3" stroke-width="1" />
+            <path d="M120 40 L100 40 L100 80 L60 80 L60 120" stroke="var(--accent)" opacity="0.15" stroke-width="1" />
+            <circle cx="80" cy="40" r="3" fill="var(--accent)" opacity="0.5" />
+            <circle cx="40" cy="80" r="3" fill="var(--accent)" opacity="0.3" />
+            <circle cx="100" cy="80" r="3" fill="var(--accent)" opacity="0.2" />
           </svg>
-          <div class="proj-num">// 001</div>
+          <div class="proj-num">// 003 · Web Application</div>
           <div class="proj-name">Task Management System</div>
-          <div class="proj-desc">A backend-centric platform built with Node.js and Express.js, featuring distributed
-            background
-            job processing using BullMQ and Redis for high-concurrency task handling. Implements JWT-based RBAC
-            authentication
-            and scalable MySQL/Prisma data modeling.</div>
+          <div class="proj-desc">A production-grade task management platform featuring modular backend architecture, JWT authentication, secure RBAC middleware, and optimized SQL schemas. Integrates Redis and BullMQ to run background tasks asynchronously, heavily improving concurrent throughput.</div>
           <div class="proj-stack">
             <span class="stack-badge">Node.js</span>
             <span class="stack-badge">Express.js</span>
             <span class="stack-badge">Prisma</span>
             <span class="stack-badge">BullMQ</span>
             <span class="stack-badge">Redis</span>
+            <span class="stack-badge">MySQL</span>
           </div>
           <div class="proj-metrics">
             <div class="metric"><span class="metric-val">200+</span><span class="metric-label">API req/sec</span></div>
@@ -275,58 +325,40 @@
           <span class="proj-arrow">↗</span>
         </a>
       </div>
+    </div>
+  </section>
 
-      <div class="proj-card medium proj-hot reveal">
-        <a href="#" target="_blank">
-          <svg class="proj-lines" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 40 L40 40 L40 0" stroke="rgba(255,107,53,0.3)" stroke-width="1" />
-            <path d="M0 80 L60 80 L60 60 L120 60" stroke="rgba(255,107,53,0.15)" stroke-width="1" />
-            <circle cx="40" cy="40" r="3" fill="rgba(255,107,53,0.5)" />
-          </svg>
-          <div class="proj-num">// 002</div>
-          <div class="proj-name">Invoice Generator Pro</div>
-          <div class="proj-desc">A high-fidelity React application with live preview, logo support, and automatic GST/VAT
-            calculations. Built for professional speed with one-click PDF export and pixel-perfect HSL design.</div>
-          <div class="proj-stack">
-            <span class="stack-badge">React</span>
-            <span class="stack-badge">Chakra UI</span>
-            <span class="stack-badge">Tailwind</span>
-            <span class="stack-badge">jsPDF</span>
-          </div>
-          <div class="proj-metrics">
-            <div class="metric"><span class="metric-val">Live</span><span class="metric-label">Preview</span></div>
-            <div class="metric"><span class="metric-val">PDF</span><span class="metric-label">Export</span></div>
-          </div>
-          <span class="proj-arrow">↗</span>
-        </a>
+  <!-- EDUCATION -->
+  <section id="education" class="education-section">
+    <div class="section-header reveal">
+      <span class="section-num">03 //</span>
+      <h2 class="section-title">Education</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="edu-timeline reveal">
+      <div class="edu-item">
+        <div class="edu-date-col">
+          <span class="edu-date-range">2025 — 2027</span>
+          <span class="edu-status">In Progress</span>
+        </div>
+        <div class="edu-content">
+          <div class="edu-school">Indira Gandhi National Open University (IGNOU)</div>
+          <div class="edu-degree">Master of Computer Applications (MCA)</div>
+          <div class="edu-desc">Advanced study of systems programming, algorithms, database models, cloud computing, and distributed networks.</div>
+        </div>
       </div>
 
-      <div class="proj-card wide proj-accent reveal">
-        <a href="#" target="_blank">
-          <svg class="proj-lines" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 40 L40 40 L40 0" stroke="rgba(0,255,157,0.3)" stroke-width="1" />
-            <path d="M0 80 L60 80 L60 60 L120 60" stroke="rgba(0,255,157,0.15)" stroke-width="1" />
-            <circle cx="40" cy="40" r="3" fill="rgba(0,255,157,0.5)" />
-            <circle cx="60" cy="80" r="3" fill="rgba(0,255,157,0.3)" />
-          </svg>
-          <div class="proj-num">// 003</div>
-          <div class="proj-name">Advanced Resume ATS & Intelligence</div>
-          <div class="proj-desc">AI-powered resume engine that improved matchmaking scores from 40% to 70% using
-            TF-IDF semantic analysis. Load-tested with k6 to achieve 600+ requests/sec with p95 latency
-            under 300ms for high-volume recruitment pipelines.</div>
-          <div class="proj-stack">
-            <span class="stack-badge">Python</span>
-            <span class="stack-badge">FastAPI</span>
-            <span class="stack-badge">TF-IDF</span>
-            <span class="stack-badge">k6</span>
-            <span class="stack-badge">PostgreSQL</span>
-          </div>
-          <div class="proj-metrics">
-            <div class="metric"><span class="metric-val">600+</span><span class="metric-label">req/sec</span></div>
-            <div class="metric"><span class="metric-val">90%</span><span class="metric-label">match accuracy</span></div>
-          </div>
-          <span class="proj-arrow">↗</span>
-        </a>
+      <div class="edu-item">
+        <div class="edu-date-col">
+          <span class="edu-date-range">2021 — 2025</span>
+          <span class="edu-status">Completed</span>
+        </div>
+        <div class="edu-content">
+          <div class="edu-school">Deshbandhu College, Delhi University</div>
+          <div class="edu-degree">Bachelor of Science in Computer Science</div>
+          <div class="edu-desc">Rigorous foundation in structural computing, database management, software engineering, OS kernels, and network architectures.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -361,26 +393,34 @@
       </div>
     </div>
 
-    <div class="contact-right reveal">
+    <form class="contact-right reveal" id="contact-form">
+      <input type="hidden" name="access_key" value="9f3ff16e-e5f5-4ed9-9ce3-3275d6f2895b">
+      <input type="hidden" name="subject" value="New Portfolio Transmission">
+      <input type="checkbox" name="botcheck" style="display: none;">
+
       <div class="form-title">// Initialize Connection</div>
       <div class="form-group">
-        <label class="form-label">Identifier</label>
-        <input type="text" class="form-input" placeholder="your_name">
+        <label class="form-label" for="contact-name">Identifier</label>
+        <input type="text" id="contact-name" name="name" class="form-input" placeholder="your_name" required autocomplete="name">
       </div>
       <div class="form-group">
-        <label class="form-label">Return Address</label>
-        <input type="email" class="form-input" placeholder="you@company.com">
+        <label class="form-label" for="contact-email">Return Address</label>
+        <input type="email" id="contact-email" name="email" class="form-input" placeholder="you@company.com" required autocomplete="email">
       </div>
       <div class="form-group">
-        <label class="form-label">Subject</label>
-        <input type="text" class="form-input" placeholder="What are we building?">
+        <label class="form-label" for="contact-subject">Subject</label>
+        <input type="text" id="contact-subject" name="custom_subject" class="form-input" placeholder="What are we building?" required>
       </div>
       <div class="form-group">
-        <label class="form-label">Payload</label>
-        <textarea class="form-input" placeholder="Describe the problem or project..."></textarea>
+        <label class="form-label" for="contact-message">Payload</label>
+        <textarea id="contact-message" name="message" class="form-input" placeholder="Describe the problem or project..." required></textarea>
       </div>
-      <button class="form-submit">→ Transmit Message</button>
-    </div>
+
+      <!-- Submission feedback status box -->
+      <div id="form-status-box" class="form-status-box" style="display: none; margin-bottom: 20px; font-size: 0.75rem; line-height: 1.6;"></div>
+
+      <button type="submit" class="form-submit" id="form-submit-btn">→ Transmit Message</button>
+    </form>
   </section>
 
   <!-- FOOTER -->
