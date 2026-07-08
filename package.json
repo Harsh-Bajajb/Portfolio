@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@agentic-reviewer/core": "file:../Review Agent/desktop-app/agentic-reviewer-core-1.0.0.tgz"
+  }
+}
