@@ -108,7 +108,7 @@
         <a href="#skills" class="btn-duo btn-duo-blue">
           <i class="fa-solid fa-star"></i> View Skill Tree
         </a>
-        <a href="Harsh_Bajaj_Full_Stack_Resume.pdf" class="btn-duo btn-duo-orange" download>
+        <a href="assets/Harsh_Bajaj_Full_Stack_Resume.pdf" class="btn-duo btn-duo-orange" download>
           <i class="fa-solid fa-download"></i> Download Resume
         </a>
       </div>
@@ -117,11 +117,21 @@
     <div class="hero-right">
       <!-- Mascot Avatar Card -->
       <div class="avatar-duo-card">
-        <div class="avatar-icon-box"><i class="fa-solid fa-code"></i></div>
+        <div class="avatar-icon-box" style="padding: 0; overflow: hidden; background: none;">
+          <img src="assets/pfp-harsh.png" alt="Harsh Bajaj"
+            style="width: 100%; height: 100%; object-fit: cover; object-position: center top;" />
+        </div>
         <div class="avatar-info">
           <div class="avatar-name">Harsh Bajaj</div>
           <div class="avatar-title">Level 5 Full-Stack Engineer</div>
-          <div class="avatar-xp-tag"><i class="fa-solid fa-bolt"></i> 2,450 XP · Quest Active</div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+            <div class="avatar-xp-tag"><i class="fa-solid fa-bolt"></i> 2,450 XP · Quest Active</div>
+            <div class="avatar-xp-tag"
+              style="color: var(--duo-blue-dark); background: var(--duo-blue-light); border-color: var(--duo-blue); flex-direction: column; align-items: flex-start; padding: 4px 10px; gap: 8px; line-height: 1;">
+              <div style="font-size: 0.8rem; font-weight: 800;">120+ questions solved</div>
+              <div style="font-size: 0.65rem; opacity: 0.85; font-weight: 700;">on LeetCode</div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -659,6 +669,14 @@
             <div>
               <div style="font-size: 0.75rem; color: var(--duo-gray-mid);">LinkedIn Network</div>
               <div>linkedin.com/in/harsh--bajaj</div>
+            </div>
+          </a>
+
+          <a href="https://leetcode.com/u/I6CifPy1OT/" target="_blank" class="contact-link-row">
+            <div class="contact-icon"><i class="fa-solid fa-code"></i></div>
+            <div>
+              <div style="font-size: 0.75rem; color: var(--duo-gray-mid);">LeetCode Profile</div>
+              <div>leetcode.com/u/I6CifPy1OT</div>
             </div>
           </a>
         </div>
